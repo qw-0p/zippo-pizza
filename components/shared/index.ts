@@ -1,5 +1,7 @@
+export { RangeSlider } from './range-slider'
+export { FilterCheckbox } from './filter-checkbox'
+export { Filters } from './filters'
 export { SortPopup } from './sort-popup'
-
 export { Categories } from './categories'
 export { Title } from './title'
 export { Header } from './header'
