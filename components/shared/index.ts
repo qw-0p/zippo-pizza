@@ -1,3 +1,5 @@
+export { ProductsGroupList } from './products-group-list'
+export { ProductCard } from './product-card'
 export { RangeSlider } from './range-slider'
 export { FilterCheckbox } from './filter-checkbox'
 export { Filters } from './filters'
