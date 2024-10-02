@@ -52,7 +52,7 @@ export const CheckboxFiltersGroup: React.FC<Props> = (
 			<div className="flex flex-col gap-4 max-h-96 pr-2 overflow-auto scrollbar">
 				{list?.map((item, index) => (
 					<FilterCheckbox
-						onCheckedChange={() => onChange && onChange(item.value)}
+						onCheckedChange={() => onChange && onChange([item.value])}
 						checked={false}
 						key={index}
 						value={item.value}
