@@ -26,7 +26,6 @@ export const CheckboxFiltersGroup: React.FC<Props> = (
 		searchInputPlaceholder = 'Search...',
 		className,
 		onChange,
-		defaultValue
 	}) => {
 
 	const [showAll, setShowAll] = React.useState(false);

@@ -12,7 +12,7 @@ interface Props {
 	className?: string;
 }
 
-export const ProductCard: React.FC<Props> = ({ id, name, price, imageUrl, className }) => {
+export const ProductCard: React.FC<Props> = ({ name, price, imageUrl, className }) => {
 	return (
 		<div className={className}>
 			<Link href="/product/:id">

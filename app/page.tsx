@@ -1,4 +1,4 @@
-import { Container, Filters, ProductCard, ProductsGroupList, Title } from "@/components/shared";
+import { Container, Filters, ProductsGroupList, Title } from "@/components/shared";
 import { TopBar } from "@/components/shared/top-bar";
 import React from "react";
 
