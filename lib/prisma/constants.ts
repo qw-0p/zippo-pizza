@@ -103,7 +103,7 @@ const productPathImg = `${images}/product`
 export const products = [
 	{
 		name: 'Omelette with ham and mushrooms',
-		imageUrl: `${productPathImg}/omelette_with_ham_&_mushrooms.png`,
+		imageUrl: `public/omelette_with_ham_&_mushrooms.png`,
 		categoryId: 2,
 	},
 	{
