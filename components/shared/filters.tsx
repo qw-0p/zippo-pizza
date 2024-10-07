@@ -1,14 +1,20 @@
+'use client'
 import React from 'react';
 import { cn } from '@/lib/utils';
 import { Title, FilterCheckbox, RangeSlider } from './index';
 import { Input } from '../ui';
 import { CheckboxFiltersGroup } from './checkbox-filters-group';
+import { useFilterIngredients } from '@/hooks/useFilterIngredients';
 
 interface Props {
 	className?: string;
 }
 
 export const Filters: React.FC<Props> = ({ className }) => {
+	const { ingredients, loading, onAddId, selectedIds } = useFilterIngredients();
+
+	const items = ingredients.map((ingredient) => ({ text: ingredient.name, value: String(ingredient.id) }))
+
 	return (
 		<div className={cn(className)}>
 			<Title text="Filters" size="sm" className='mb-5 font-bold' />
@@ -32,82 +38,12 @@ export const Filters: React.FC<Props> = ({ className }) => {
 				title="Ingredients"
 				className='mt-5'
 				limit={6}
-				defaultItems={[
-					{
-						text: 'Cheese sauce',
-						value: '1'
-					},
-					{
-						text: 'Mozzarella',
-						value: '2'
-					},
-					{
-						text: 'Garlic',
-						value: '3'
-					},
-					{
-						text: 'Salty pickles',
-						value: '4'
-					},
-					{
-						text: 'Red onion',
-						value: '5'
-					},
-					{
-						text: 'Tomatoes',
-						value: '6'
-					}
-				]}
-				items={[
-					{
-						text: 'Cheese sauce',
-						value: '1'
-					},
-					{
-						text: 'Mozarella',
-						value: '2'
-					},
-					{
-						text: 'Garlic',
-						value: '3'
-					},
-					{
-						text: 'Salty pickles',
-						value: '4'
-					},
-					{
-						text: 'Red onion',
-						value: '5'
-					},
-					{
-						text: 'Tomatoes',
-						value: '6'
-					},
-					{
-						text: 'Cheese sauce',
-						value: '1'
-					},
-					{
-						text: 'Mozarella',
-						value: '2'
-					},
-					{
-						text: 'Garlic',
-						value: '3'
-					},
-					{
-						text: 'Salty pickles',
-						value: '4'
-					},
-					{
-						text: 'Red onion',
-						value: '5'
-					},
-					{
-						text: 'Tomatoes',
-						value: '6'
-					}
-				]}
+				defaultItems={items.slice(0, 6)}
+				items={items}
+				loading={loading}
+				onClickCheckbox={onAddId}
+				selectedIds={selectedIds}
+				name='ingredients'
 			/>
 
 
